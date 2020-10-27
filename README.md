@@ -11,3 +11,4 @@ target/release/k8s-controller
 ```
 Change something to the book and the controller should notify about the change  
 
+example from https://dzone.com/articles/writing-a-kubernetes-crd-controller-in-rust
