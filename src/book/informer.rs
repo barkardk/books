@@ -23,5 +23,17 @@ pub fn watch(){
 // This holds a description of the kube::api::Object
 type KubeBook = Object<Book,String>;
 fn handle(event: WatchEvent<KubeBook>){
-    println!("[INFO] A change was made to the book");
+    match event {
+        WatchEvent::Added(book)=> {
+            println!("[INFO] Added a book {} with title '{}'", book.metadata.name, book.spec.title)
+        },
+        WatchEvent::Deleted(book) => {
+            println!("[INFO] Deleted a book {}", book.metadata.name)
+        },
+        _ => {
+            println!("[INFO] A change was made to the book")
+        }
+
+    }
+
 }
