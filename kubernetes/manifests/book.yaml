@@ -1,0 +1,8 @@
+apiVersion: example.netapp.com/v1
+kind: book
+metadata:
+  name: fellowship-of-the-ring
+spec:
+  title: Fellowship of the Ring
+  authors:
+    - J.R Tolkien
